@@ -55,6 +55,7 @@ public class VegetableServiceImpl implements VegetableService {
         existingVegetable.setPrice(vegetableCreateDTO.getPrice());
         existingVegetable.setDescription(vegetableCreateDTO.getDescription());
         existingVegetable.setCategory(vegetableCreateDTO.getCategory());
+        existingVegetable.setVegetableImage(vegetableCreateDTO.getVegetableImage());
 
         Vegetable updatedVegetable = vegetableRepository.save(existingVegetable);
         return modelMapper.map(updatedVegetable, VegetableDTO.class);
