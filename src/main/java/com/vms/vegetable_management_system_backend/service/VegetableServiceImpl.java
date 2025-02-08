@@ -60,4 +60,12 @@ public class VegetableServiceImpl implements VegetableService {
         Vegetable updatedVegetable = vegetableRepository.save(existingVegetable);
         return modelMapper.map(updatedVegetable, VegetableDTO.class);
     }
+
+    @Override
+    public List<VegetableDTO> findByCategory(String category) {
+        return vegetableRepository.findByCategory(category).stream()
+                .map(vegetable -> modelMapper.map(vegetable, VegetableDTO.class))
+                .collect(Collectors.toList());
+    }
+
 }

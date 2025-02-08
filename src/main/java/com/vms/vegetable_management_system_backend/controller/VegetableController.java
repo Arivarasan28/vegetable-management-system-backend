@@ -50,4 +50,11 @@ public class VegetableController {
     public VegetableDTO updateVegetable(@PathVariable int vegetableId, @RequestBody VegetableCreateDTO vegetableCreateDTO) {
         return vegetableService.update(vegetableId, vegetableCreateDTO);
     }
+
+    @CrossOrigin(origins = "http://localhost:5173")
+    @GetMapping("/category/{category}")
+    public List<VegetableDTO> getVegetablesByCategory(@PathVariable String category) {
+        return vegetableService.findByCategory(category);
+    }
+
 }

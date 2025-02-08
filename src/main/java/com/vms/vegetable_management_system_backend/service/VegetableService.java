@@ -17,4 +17,6 @@ public interface VegetableService {
     void deleteById(int theId);
 
     VegetableDTO update(int VegetableId, VegetableCreateDTO vegetableCreateDTO);
+
+    List<VegetableDTO> findByCategory(String category);
 }
